@@ -20,7 +20,7 @@ public class ExcelHelper {
 		boolean isExcel = false;
 		String contentType = file.getContentType();
 		// content type for xls file
-		if (contentType.equals("application/vdn.openxmlformats-officedocument.spreadsheetml.sheet")) {
+		if (contentType.equals("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")) {
 			return true;
 		} else {
 			return isExcel;
@@ -35,40 +35,44 @@ public class ExcelHelper {
 			XSSFSheet sheet = work.getSheet("data"); // data is name of sheet present in workbook
 
 			int rowNum = 0;
-			Iterator<Row> iterator = sheet.iterator();
-			while (iterator.hasNext()) {
-				Row row = iterator.next();
+			if(null!=(sheet))
+			{
+				Iterator<Row> iterator = sheet.iterator();
+				while (iterator.hasNext()) {
+					Row row = iterator.next();
 
-				if (rowNum == 0) {
-					rowNum++; // means at header part of excel (row 1)
-					continue;
-				}
-				Iterator<Cell> cells = row.iterator();
-				int cid = 0;
-				Product p = new Product();
-
-				while (cells.hasNext()) {
-					Cell cell = cells.next(); // go inside every cell of a row
-					switch (cid) {
-					case 0: // row cell 1
-						p.setProductId((int) cell.getNumericCellValue());
-						break;
-					case 1:
-						p.setProductName(cell.getStringCellValue());
-						break;
-					case 2:
-						p.setProductDesc(cell.getStringCellValue());
-						break;
-
-					case 3:
-						p.setPrice(cell.getNumericCellValue());
-						
-					default:
-						break;
+					if (rowNum == 0) {
+						rowNum++; // means at header part of excel (row 1)
+						continue;
 					}
-					cid++;
-				}
-			prodList.add(p);
+					Iterator<Cell> cells = row.iterator();
+					int cid = 0;
+					Product p = new Product();
+
+					while (cells.hasNext()) {
+						Cell cell = cells.next(); // go inside every cell of a row
+						switch (cid) {
+						case 0: // row cell 1
+							p.setProductId((int) cell.getNumericCellValue());
+							break;
+						case 1:
+							p.setProductName(cell.getStringCellValue());
+							break;
+						case 2:
+							p.setProductDesc(cell.getStringCellValue());
+							break;
+
+						case 3:
+							p.setPrice(cell.getNumericCellValue());
+							
+						default:
+							break;
+						}
+						cid++;
+					}
+				prodList.add(p);
+			}
+			
 			}
 
 		} catch (

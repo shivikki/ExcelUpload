@@ -30,11 +30,11 @@ public class ProductRepoImpl implements ProductRepo {
 		List<Product> productList = new ArrayList<>();
 		int result = 0;
 		try {
-			List<Map<String, Object>> prodData = jdbcTemplate.queryForList(QueryConstant.SAVE_PRODUCT);
+			//List<Map<String, Object>> prodData = jdbcTemplate.queryForList(QueryConstant.SAVE_PRODUCT);
 
 			// update function returns int value ie no. of rows affected
-			result = jdbcTemplate.update(QueryConstant.SAVE_PRODUCT, p.getProductId(), p.getProductName(), p.getPrice(),
-					p.getProductDesc());
+			result = jdbcTemplate.update(QueryConstant.SAVE_PRODUCT, p.getProductId(), p.getProductName(), 
+					p.getProductDesc(),p.getPrice());
 
 			LOG.info("Number of record inserted " + result);
 
