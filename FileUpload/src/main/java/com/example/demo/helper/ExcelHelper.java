@@ -28,7 +28,7 @@ public class ExcelHelper {
 	}
 
 	// converts Excel to list of products
-	public List<Product> convertExcelToList(InputStream is) {
+	public static List<Product> convertExcelToList(InputStream is) {
 		List<Product> prodList = new ArrayList<>();
 		try {
 			XSSFWorkbook work = new XSSFWorkbook(is); // get this class from pom.xml org.pom.poi dependency
