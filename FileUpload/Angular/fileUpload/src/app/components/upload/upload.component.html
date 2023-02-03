@@ -5,5 +5,14 @@
     <p class="my-4">
         <button class="btn bg-primary px-3" (click)=" uploadFile()">Upload File</button>
     </p>
-    
+
+
+    <p>Tooltip</p>
+    click outside:
+    <button type="button" class="btn btn-outline-secondary" triggers="click" [autoClose]="'outside'"
+        ngbTooltip="Click outside or press Escape to close" placement="end">
+        <!--use placement to postion the tooltip, possible values top end start bottom-->
+        Click to toggle
+    </button>
+
 </div>
