@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
-
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { AlertModalComponent } from 'src/app/shared/shared/modals/alert-modal/alert-modal.component';
 @Component({
   selector: 'app-upload',
   templateUrl: './upload.component.html',
@@ -11,7 +12,8 @@ import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 export class UploadComponent implements OnInit {
 
   public fileUploadUrl="http://localhost:8080/upload";
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient, private ngbModal:NgbModal) { }
+  public modalRef:any;
   public file:any;
   ngOnInit(): void {
   }
@@ -21,6 +23,16 @@ export class UploadComponent implements OnInit {
     console.log(this.file);
   }
 
+  openModal(){
+    this.modalRef = this.ngbModal.open(AlertModalComponent,{
+      size:"md",
+      keyboard:true,
+      backdrop:'static',
+      centered:true
+    })
+
+    this.modalRef.componentInstance.content="You are not authorized to use this !!!"
+  }
 
   uploadFile()
   {
