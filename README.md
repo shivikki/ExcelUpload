@@ -22,3 +22,13 @@ From frontend added function to upload file
   providers:[NgbTooltipModule]
 })
 
+
+
+#Create reusable modal popup inside shared module
+
+> Create new module - ng g m shared
+> create component for modal popup - ng g c alert-modal
+> Use NgbActiveModal inside ts file of modal
+> do the sttying of modal in html/css files
+> In shared.module.ts file define exports, entryComponents, declaration
+> Import NgbModal & AlertModalComponent inside the component wherever Modal needs to be called
