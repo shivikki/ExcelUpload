@@ -9,6 +9,16 @@ From frontend added function to upload file
 
 > ng add @ng-bootstrap/ng-bootstrap
 > In app.module.ts add dependency
-> import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+   import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+   
+   
+> In uploadComponent.ts 
+ import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 
+@Component({
+  selector: 'app-upload',
+  templateUrl: './upload.component.html',
+  styleUrls: ['./upload.component.scss'],
+  providers:[NgbTooltipModule]
+})
 
