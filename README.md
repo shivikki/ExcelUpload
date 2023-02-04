@@ -32,3 +32,7 @@ From frontend added function to upload file
 > do the sttying of modal in html/css files
 > In shared.module.ts file define exports, entryComponents, declaration
 > Import NgbModal & AlertModalComponent inside the component wherever Modal needs to be called
+
+
+#Dynamic Read More & read less added for list
+
