@@ -15,6 +15,24 @@ export class UploadComponent implements OnInit {
   constructor(private http:HttpClient, private ngbModal:NgbModal) { }
   public modalRef:any;
   public file:any;
+
+  //for read more read less
+  public contentList=[{
+    sr:1,
+    content:"hdsb hfsjkbf hfghvbs hgsfjkbf hafkjbfv hfdkjvbf hfebkjbvf hsvdhjnv",
+    isReadMore:false
+  },
+  {
+    sr:2,
+    content:"hdsb hfsjk",
+    isReadMore:false
+  },
+  {
+    sr:3,
+    content:"cghcv hjhv ftadsf hgdshf hgvshjb esrasd k;kl ",
+    isReadMore:false
+  }
+]
   ngOnInit(): void {
   }
 
@@ -49,4 +67,10 @@ export class UploadComponent implements OnInit {
       }
     )
   }
+
+
+  showText(i:any) {
+    this.contentList[i].isReadMore=!this.contentList[i].isReadMore;
+    
+ }
 }

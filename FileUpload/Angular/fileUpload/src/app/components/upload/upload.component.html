@@ -1,11 +1,11 @@
 <br><br>
 <div class="container">
-    <p>Upload File</p>
+    <b>Upload File</b>
     <input type="file" (change)="selectFile($event)">
     <p class="my-4">
         <button class="btn bg-primary px-3" (click)=" uploadFile()">Upload File</button>
     </p>
-
+    <hr>
 
     <p>Tooltip</p>
     click outside:
@@ -14,9 +14,35 @@
         <!--use placement to postion the tooltip, possible values top end start bottom-->
         Click to toggle
     </button>
+    <hr>
 
     <br><br>
     Open Ngb modal
     <button (click)="openModal()" class="btn btn-outline-primary">click</button>
+
+    <br><br>
+    <hr>
+    Read more / read less
+    <div *ngFor="let data of contentList;let i=index;" class="row tableDiv">
+        <div class="col-2">
+            {{data.sr}}
+        </div>
+        <div class="col-2">
+            <!-- <div [ngClass]="{'limitTextHeight': data.isReadMore}">{{data.content}}</div> 
+            <button (click)="showText(i)">
+                {{ data.isReadMore ? 'Read More': 'Read Less' }}
+            </button> -->
+
+            {{( data.isReadMore) ? data.content : data.content | slice:0:30}}
+            <span *ngIf="data.content.length>30 && data.isReadMore==false">..</span>
+            <a href="javascript:;" *ngIf="data.content.length>30 && data.isReadMore==false"
+                (click)="data.isReadMore=!data.isReadMore">[Read More]</a>
+
+            <a href="javascript:;" *ngIf="data.isReadMore==true" (click)="data.isReadMore=!data.isReadMore">[Read Less]</a>
+        </div>
+
+
+
+    </div>
 
 </div>
