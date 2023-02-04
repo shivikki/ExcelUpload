@@ -43,18 +43,36 @@
         </div>
     </div>
 
-    <br><br><hr>
+    <br><br>
+    <hr>
     <b>Drag & Drop file</b>
     <div class="fileContainer">
-        <input type="file" class="file" (change)="getDragFile($event)" >
-        <div class="dragTxt">Browse or Drag & Drop file to upload</div> 
+        <input type="file" class="file" (change)="getDragFile($event)">
+        <div class="dragTxt">Browse or Drag & Drop file to upload</div>
     </div>
     <br>
     <div>
-         File Name : <span *ngIf="fileDrag!=undefined">{{fileDrag.name}}</span>
+        File Name : <span *ngIf="fileDrag!=undefined">{{fileDrag.name}}</span>
         <br>
         <button (click)="fileDrag = undefined">Clear File</button>
     </div>
 
-    <br><br><br>
+    <br><br>
+    <hr>
+
+    <em>Radio button</em>
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+        <label class="form-check-label" for="exampleRadios1">
+            Default radio
+        </label>
+    </div>
+    <div class="form-check my-2">
+        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+        <label class="form-check-label" for="exampleRadios2">
+          Second default radio
+        </label>
+      </div>
+
+    <br><br> <br><br> <br><br>
 </div>
