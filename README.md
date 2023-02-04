@@ -36,3 +36,6 @@ From frontend added function to upload file
 
 #Dynamic Read More & read less added for list
 
+
+#Drag & Drop file to upload 
+
