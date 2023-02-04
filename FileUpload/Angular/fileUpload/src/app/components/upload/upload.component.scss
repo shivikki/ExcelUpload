@@ -11,13 +11,21 @@ $colorPrimary:blue;
 
 .fileContainer{
     width:600px;
+    height:10rem;
     border:4px dotted $colorPrimary;
-    position: absolute;
+  
 
     .file{
         opacity: 0;
-        padding:9rem;
         width:auto;
-        height:5rem;
+        height:100%;
+        width:100%;
+    }
+
+    .dragTxt{
+        position: relative;
+        bottom:50%;
+        display: flex;
+        justify-content: center;
     }
 }
