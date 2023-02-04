@@ -1,3 +1,5 @@
+$colorPrimary:blue;
+
 .tableDiv > div{
     border:1px solid black;
 }
@@ -5,4 +7,17 @@
 .limitTextHeight {
     height: 20px;
     overflow: hidden;
+}
+
+.fileContainer{
+    width:600px;
+    border:4px dotted $colorPrimary;
+    position: absolute;
+
+    .file{
+        opacity: 0;
+        padding:9rem;
+        width:auto;
+        height:5rem;
+    }
 }

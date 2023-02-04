@@ -38,11 +38,23 @@
             <a href="javascript:;" *ngIf="data.content.length>30 && data.isReadMore==false"
                 (click)="data.isReadMore=!data.isReadMore">[Read More]</a>
 
-            <a href="javascript:;" *ngIf="data.isReadMore==true" (click)="data.isReadMore=!data.isReadMore">[Read Less]</a>
+            <a href="javascript:;" *ngIf="data.isReadMore==true" (click)="data.isReadMore=!data.isReadMore">[Read
+                Less]</a>
         </div>
-
-
-
     </div>
 
+    <br><br><hr>
+    <b>Drag & Drop file</b>
+    <div class="fileContainer">
+        <input type="file" class="file" (change)="getDragFile($event)" >
+        <div>Browse or Drag & Drop file to upload</div> 
+    </div>
+    <br>
+    <div>
+         File Name : <span *ngIf="fileDrag!=undefined">{{fileDrag.name}}</span>
+        <br>
+        <button (click)="fileDrag = undefined">Clear File</button>
+    </div>
+
+    <br><br><br>
 </div>

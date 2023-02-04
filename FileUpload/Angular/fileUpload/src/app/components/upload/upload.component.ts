@@ -15,6 +15,8 @@ export class UploadComponent implements OnInit {
   constructor(private http:HttpClient, private ngbModal:NgbModal) { }
   public modalRef:any;
   public file:any;
+  public fileDrag:any;
+  public fileResult='';
 
   //for read more read less
   public contentList=[{
@@ -72,5 +74,12 @@ export class UploadComponent implements OnInit {
   showText(i:any) {
     this.contentList[i].isReadMore=!this.contentList[i].isReadMore;
     
+ }
+
+ getDragFile(event:any){
+  //drag multiple files
+  this.fileDrag=event.target.files[0];
+  
+  console.log(this.fileDrag)
  }
 }
