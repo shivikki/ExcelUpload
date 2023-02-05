@@ -3,11 +3,15 @@ import { Component, OnInit } from '@angular/core';
 import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { AlertModalComponent } from 'src/app/shared/shared/modals/alert-modal/alert-modal.component';
+
+import { FormsModule } from '@angular/forms';
+import { JsonPipe } from '@angular/common';
+import { NgbTimepickerModule } from '@ng-bootstrap/ng-bootstrap';
 @Component({
   selector: 'app-upload',
   templateUrl: './upload.component.html',
   styleUrls: ['./upload.component.scss'],
-  providers:[NgbTooltipModule]
+  providers:[NgbTooltipModule,NgbTimepickerModule, FormsModule, JsonPipe]
 })
 export class UploadComponent implements OnInit {
 
@@ -17,6 +21,13 @@ export class UploadComponent implements OnInit {
   public file:any;
   public fileDrag:any;
   public fileResult='';
+
+  //timepicker : dafault value added
+  meridian = true;
+  time = { hour: 13, minute: 30 };
+	toggleMeridian() {
+		this.meridian = !this.meridian;
+	}
 
   //for read more read less
   public contentList=[{

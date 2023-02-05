@@ -74,7 +74,8 @@
         </label>
     </div>
 
-    <br><hr>
+    <br>
+    <hr>
     Checkbox
     <div class="form-check form-check-inline">
         <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
@@ -89,5 +90,16 @@
     <label class="container">Two
         <input type="checkbox">
         <span class="checkmark"></span>
-      </label>
+    </label>
+
+
+    <br>
+    <hr>
+    Custom Timepicker
+    <ngb-timepicker [(ngModel)]="time" [meridian]="meridian"></ngb-timepicker>
+    <button class="btn btn-sm btn-outline-{{meridian ? 'success' : 'danger'}}" (click)="toggleMeridian()">
+        Meridian - {{meridian ? "ON" : "OFF"}}
+    </button>
+    <hr />
+    <pre>Selected time: {{time | json}}</pre>
 </div>
