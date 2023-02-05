@@ -56,3 +56,17 @@ import { NgbTimepickerModule } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./upload.component.scss'],
   providers:[NgbTooltipModule,NgbTimepickerModule, FormsModule, JsonPipe]
 })
+
+
+#Type search dropdowm added
+> Used ng-2-search filter
+> npm i ng2-search-filter --save
+> in app.module.ts
+   import { Ng2SearchPipeModule } from 'ng2-search-filter';
+   @NgModule({
+  imports: [BrowserModule, Ng2SearchPipeModule],
+  declarations: [AppComponent],
+  bootstrap: [AppComponent]
+})
+
+> for dropdown used ngbDropdown
