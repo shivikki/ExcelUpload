@@ -44,4 +44,15 @@ From frontend added function to upload file
 #added sticky header & footer
 
 #custom timepicker
+> In component ts file add dependency for timepicker
+ 
+import { FormsModule } from '@angular/forms';
+import { JsonPipe } from '@angular/common';
+import { NgbTimepickerModule } from '@ng-bootstrap/ng-bootstrap';
 
+@Component({
+  selector: 'app-upload',
+  templateUrl: './upload.component.html',
+  styleUrls: ['./upload.component.scss'],
+  providers:[NgbTooltipModule,NgbTimepickerModule, FormsModule, JsonPipe]
+})
