@@ -102,4 +102,29 @@
     </button>
     <hr />
     <pre>Selected time: {{time | json}}</pre>
+
+    <br><br>
+    <hr>
+    <strong>Typesearch Dropdown</strong>
+    <div class="row">
+        <div class="col">
+            <div ngbDropdown class="d-inline-block">
+                <span>Select Name :</span>
+                <button type="button" class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle
+                style="width:20rem">
+                    {{nameSelected}}
+                </button>
+                <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                    <input type="text" [(ngModel)]="term" style="width:95%;border-radius: 5px;" placeholder="search name">
+                    <div *ngFor="let item of items | filter:term"  style="width:20rem">
+                        <button ngbDropdownItem (click)="selectName(item.name)">{{item.name}}</button>
+                    </div>
+
+                    <!-- <button ngbDropdownItem>Another Action</button>
+                    <button ngbDropdownItem>Something else is here</button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br><br><br><br>
 </div>

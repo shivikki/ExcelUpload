@@ -8,7 +8,7 @@ import { UploadComponent } from './components/upload/upload.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +21,8 @@ import { FooterComponent } from './footer/footer.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    NgbModule 
+    NgbModule ,
+    Ng2SearchPipeModule
    
   ],
   providers: [],
