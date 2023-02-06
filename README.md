@@ -70,3 +70,13 @@ import { NgbTimepickerModule } from '@ng-bootstrap/ng-bootstrap';
 })
 
 > for dropdown used ngbDropdown
+
+#Gloabal spinner
+> inside shared folder
+   ng g s loader
+   
+   create class LoaderInterceptor
+ > In app.module.ts
+ inside providers mention interceptor
+ 
+ providers: [   LoaderService,{ provide: HTTP_INTERCEPTORS, useClass: LoaderInterService, multi: true }]
