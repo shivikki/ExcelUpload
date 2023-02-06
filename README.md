@@ -80,3 +80,8 @@ import { NgbTimepickerModule } from '@ng-bootstrap/ng-bootstrap';
  inside providers mention interceptor
  
  providers: [   LoaderService,{ provide: HTTP_INTERCEPTORS, useClass: LoaderInterService, multi: true }]
+ 
+ > Inside componnets - ng g c my-loader
+ 
+ > In app.module.html
+ <app-my-loader><app-my-loader>
